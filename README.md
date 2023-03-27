@@ -1,2 +1,2 @@
 # devops-experience
-Palestra no DevOps Experience
+Pipeline do Édipo

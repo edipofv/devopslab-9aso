@@ -37,6 +37,11 @@ jobs:
         run: |
           pytest -v  --cov --cov-report=xml --cov-report=html
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+         path: htmlcov
+
       - name: Install tox and any other packages
         run: pip install tox
 

@@ -33,7 +33,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
-
+      - name: Run Test With Coverage
+        run: coverage run --branch --source=$GITHUB_WORKSPACE ./manage.py test --noinput --parallel
+      - name: Generate Coverage Report
+        run: coverage xml -o test-coverage.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
